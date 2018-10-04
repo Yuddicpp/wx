@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/message/message",
+    "pages/users/users",
+    "pages/logs/logs",
+    "pages/detail/detail"
+  ],
+  "window": {
+    "backgroundTextStyle":"black",
+    "navigationBarBackgroundColor": "#FFB90F",
+    "navigationBarTitleText": "Huster同行",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh":true
+  },
+  "tabBar": {
+    "selectedColor":"#FFB90F",
+    "color":"#C4C4C4",
+    "backgrounColor":"#FCFCFC",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "发现",
+        "iconPath":"photos/发现.png",
+        "selectedIconPath": "photos/发现-d.png"
+
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "iconPath": "photos/消息.png",
+        "selectedIconPath": "photos/消息-d.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

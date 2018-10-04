@@ -1,0 +1,68 @@
+.tab_top{
+  width: 100%;
+  color: 	#fff;
+  background-color: #FFB90F;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+.input{
+  z-index: 999;
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  right: 20px;
+  bottom: 20px;
+  border-radius: 50%;
+  line-height: 80px;
+  background-color:#FFB90F;
+  color: #fff; 
+  opacity: 0.5;
+}
+.component{
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: #fff;
+  position: relative;
+  border-radius: 15px;
+  border: #D3D3D3 solid 2px;
+  padding: 5px;
+}
+.avatar{
+  display: inline-block;
+  background-image: 100%;
+  border: 1px solid #FFB90F;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 5px;
+}
+.information{
+  display: inline-block;
+  position: relative;
+  margin-left: 10px;
+}
+.nickname{
+  display: inline-block;
+  color: #D3D3D3;
+  font-family: Arial, Helvetica, sans-serif;
+  float: left;
+}
+.sex{
+  display: inline-block;
+  background-image: 100%;
+  width: 30px;
+  height: 30px;
+}
+.form_title{
+  display: inline-block;
+  border: 1px solid #D3D3D3;
+  background-color:	#EEB422;
+  color: #fff;
+  border-radius: 20%;
+  height: 20px;
+  line-height: 20px;
+  margin: 2px;
+  margin-left: 5px;
+  padding: 5px;
+}

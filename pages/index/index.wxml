@@ -1,0 +1,27 @@
+<view class="tab_top">同行信息</view>
+<button class='input' bindtap='change' open-type='getUserInfo' bindgetuserinfo='onGetUserInfo'>
+  发布
+</button>
+<view class='component' wx:for="{{users}}" wx:key="{{index}}" wx:for-item="item" bindtap="toDetail" data-index="{{index}}">
+  <image class='avatar' src="{{item.userinfo.avatarUrl}}"></image>
+  <view class="information">
+    <view class='nickname'>{{item.userinfo.nickName}}</view>
+    <image class='sex' src="{{item.sex}}"></image>
+  </view>
+  <view class='name'>
+    <view class="form_title">姓名</view>
+    ：{{item.name}}
+  </view>
+  <view class='college'>
+    <view class="form_title">学院</view>
+    ：{{item.college}}
+  </view>
+  <view class='road'>
+    <view class="form_title">路线</view>
+    ：{{item.starting_point}}->{{item.end}}
+  </view>
+  <view class='time'>
+    <view class="form_title">时间</view>
+    ：{{item.date}} {{item.time}}
+  </view>
+</view>

@@ -1,0 +1,41 @@
+<view class="title">
+  <view class='reback' bindtap='reback'>返回</view>
+  填写同行信息</view>
+<form class='users' bindsubmit='formSubmit'>
+  <view class='titles'>姓名：
+    <input name="name" placeholder='请输入姓名' type='text' class='input_box'></input>
+  </view>
+  <view class='titles'>学院：
+    <input name="college" placeholder='请输入你的学院' type='text' class='input_box'></input>
+  </view>
+  <view class='titles'>性别:
+    <radio-group name="sex">
+      <label>
+        <radio value="男" />男</label>
+      <label>
+        <radio value="女" />女</label>
+    </radio-group>
+  </view>
+  <view class="titles">起点-终点:</view>
+  <picker mode="multiSelector" bindchange="bindMultiPickerChange" value="{{multiIndex}}" range="{{multiArray}}" class='choose'>
+    <view class="picker">
+      {{multiArray[0][multiIndex[0]]}} -> {{multiArray[1][multiIndex[1]]}}
+    </view>
+  </picker>
+  <view class="titles">日期:</view>
+  <picker mode="date" value="{{date}}" start="2018-01-01" end="12-31" bindchange="bindDateChange" class='choose'>
+    <view class="picker">
+    出发日期：  {{date}}
+    </view>
+  </picker>
+
+  <view class="titles">时间:</view>
+  <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange" class='choose'>
+    <view class="picker">
+    出发时间：  {{time}}
+    </view>
+  </picker>
+  <view class='titles'>约伴要求</view>
+<textarea placeholder="不得多于15字" name="textarea" maxlength='15' class='area'/>
+<button form-type="submit" class='ending'> 发布 </button>
+</form>

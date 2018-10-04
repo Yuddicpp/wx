@@ -1,0 +1,38 @@
+<view class='component'>
+  <image class='avatar' src="{{user.userinfo.avatarUrl}}"></image>
+  <view class="name_sex">
+    <view class='nickname'>{{user.userinfo.nickName}}</view>
+    <image class='sex' src="{{user.sex}}"></image>
+  </view>
+  <view class='information'>#{{user.name}}({{user.college}})#</view>
+  <view class='starting_point'>
+    <image src='/photos/起点.png' class='starting_point_photo'></image>
+    <view class='starting_point_text'>{{user.starting_point}}</view>
+  </view>
+  <view class='end'>
+  <image class='end_photo' src='/photos/终点.png'></image>
+  <view class='end_text'>{{user.end}}</view>
+  </view>
+  <view class='data'>
+    <image class='data_photo' src='/photos/日期.png'></image>
+    <view class='data_text'>{{user.date}}</view>
+  </view>
+  <view class='time'>
+    <image class='time_photo' src='/photos/时间.png'></image>
+    <view class='time_text'>{{user.time}}</view>
+  </view>
+  <view class='claim'>
+    <image class='claim_photo' src='/photos/附加要求.png'></image>
+    <view class='claim_text'>约伴要求</view>
+  </view>
+  <view class='textarea'>
+    {{user.textarea}}
+  </view>
+</view>
+<view class='allmessage'>全部留言</view>
+<view class='messages'></view>
+<view class='tap'>
+  <view class='leave_message'>留言</view>
+  <view class='collection'>收藏</view>
+  <view class='forward'>转发</view>
+</view>
