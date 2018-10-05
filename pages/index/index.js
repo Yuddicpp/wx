@@ -21,6 +21,23 @@ Page({
 
   onLoad: function (options) {
     // Do some initialize when page load.
+    wx.request({
+      url: 'https://127.0.0.1:8000/huster/get_info/',
+      data: {},
+      method: 'GET',
+      header: {
+        'Content-Type': 'application/json'
+      }, 
+      success: function(res){
+       if (res.data.error_code == 0) {
+          this.setData({
+            users.push(JSON.parse(res));
+          })
+        } else {
+          console.log('获取失败');
+        }
+      }
+    })
   },
   onReady: function () {
     // Do something when page ready.
