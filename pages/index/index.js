@@ -11,38 +11,50 @@ Page({
       url: '../detail/detail?index='+e.currentTarget.dataset.index,
     });
   },
-  onGetUserInfo: function (e) {
-    app.globalData.user_Info=e.detail.userInfo
+  onGotUserInfo: function (e) {
+    app.globalData.user_Info = e.detail.userInfo;
+    console.log(app.globalData.user_Info);
   },
-
   data: {
     users: []
   },
 
   onLoad: function (options) {
     // Do some initialize when page load.
-      wx.request({
-        //上线接口地址要是https测试可以使用http接口方式
-          url: 'https://127.0.0.1:8000/huster/get_info/',
-          method: 'GET',
-          header: {
-            'content-type': 'application/json'
-          },
-          success: function (res) {
-            console.log(JSON.stringify(res.data));
-          },
-          fail: function (res) {
-            console.log(res);
-          }
+    wx.getSetting({
+      success(res) {
+        if (res.authSetting["scope.userInfo"]) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+          wx.getUserInfo({
+            success: function(res) {
+              app.globalData.user_Info=res.userInfo;
+            }
+          });
+        }
+      }
     });
 
+    wx.request({
+      //上线接口地址要是https测试可以使用http接口方式
+      url: 'http://127.0.0.1:8000/huster/get_info/',
+      method: 'GET',
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        console.log(res.data.data);
+        app.globalData.users = res.data.data;
+      },
+      fail: function (res) {
+        console.log(res);
+      }
+    });
   },
   onReady: function () {
     // Do something when page ready.
   },
   onShow: function () {
     // Do something when page show.
-
     this.setData({
       users: app.globalData.users
     })

@@ -17,9 +17,8 @@
     border-radius:50%;
     border: 1px solid;
     margin: 8px;
-    background: 100%;
+    background-image: 100%;
     overflow: hidden;
-    float: left;
 }
 .name{
     display: inline-block;

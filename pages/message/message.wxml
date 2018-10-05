@@ -1,5 +1,5 @@
 <view class="component">
-    <open-data type="userAvatarUrl" class="photo"></open-data>
-    <open-data type="userNickName" class="name"></open-data>
+    <image src="{{app.globalData.user_Info.avatarUrl}}" class='photo'></image>
+    <view class="name">{{app.globalData.user_Info.nickName}}</view>
 </view>
 <view class="mine"></view>

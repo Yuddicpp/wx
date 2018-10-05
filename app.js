@@ -2,14 +2,28 @@ App({
   data: {
   },
   globalData:{
-    users: [],
-    user_Info: {},
+    users: null,
+    user_Info:null,
   },
   /**
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
    */
   onLaunch: function () {
-
+    wx.request({
+      //上线接口地址要是https测试可以使用http接口方式
+      url: 'http://127.0.0.1:8000/huster/get_info/',
+      method: 'GET',
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        console.log(res.data.data);
+        this.globalData.users = res.data.data;
+      },
+      fail: function (res) {
+        console.log(res);
+      }
+    });
     wx.login({
       success: function (res) {
         if (res.code) {

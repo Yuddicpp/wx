@@ -1,5 +1,5 @@
 <view class="tab_top">同行信息</view>
-<button class='input' bindtap='change' open-type='getUserInfo' bindgetuserinfo='onGetUserInfo'>
+<button class='input' bindtap='change' open-type="getUserInfo" bindgetuserinfo='onGotUserInfo'>
   发布
 </button>
 <view class='component' wx:for="{{users}}" wx:key="{{index}}" wx:for-item="item" bindtap="toDetail" data-index="{{index}}">
