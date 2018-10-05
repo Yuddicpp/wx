@@ -114,7 +114,18 @@ Page({
         user.nickName = app.globalData.user_Info.nickName;
         var c =clone(user);
         app.globalData.users.push(c);
-        console.log(app.globalData.user);
+        console.log(app.globalData.users);
+        wx.request({
+          url: 'http://127.0.0.1:8000/store_info/',
+              method: 'POST',
+              data:c,
+              header: {
+                'content-type': 'application/json'
+              },
+              success: function (res) {
+                console.log(res.data);
+              }
+        });
         wx.navigateBack({
           delta:1
         })
