@@ -6,14 +6,13 @@ Page({
       url: '../users/users',
     });
   },
-  toDetail:function(e){
+  toDetail: function (e) {
     wx.navigateTo({
-      url: '../detail/detail?index='+e.currentTarget.dataset.index,
+      url: '../detail/detail?index=' + e.currentTarget.dataset.index,
     });
   },
   onGotUserInfo: function (e) {
     app.globalData.user_Info = e.detail.userInfo;
-    console.log(app.globalData.user_Info);
   },
   data: {
     users: []
@@ -26,27 +25,11 @@ Page({
         if (res.authSetting["scope.userInfo"]) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称
           wx.getUserInfo({
-            success: function(res) {
-              app.globalData.user_Info=res.userInfo;
+            success: function (res) {
+              app.globalData.user_Info = res.userInfo;
             }
           });
         }
-      }
-    });
-
-    wx.request({
-      //上线接口地址要是https测试可以使用http接口方式
-      url: 'http://127.0.0.1:8000/huster/get_info/',
-      method: 'GET',
-      header: {
-        'content-type': 'application/json'
-      },
-      success: function (res) {
-        console.log(res.data.data);
-        app.globalData.users = res.data.data;
-      },
-      fail: function (res) {
-        console.log(res);
       }
     });
   },
@@ -55,9 +38,23 @@ Page({
   },
   onShow: function () {
     // Do something when page show.
+    wx.request({
+      //上线接口地址要是https测试可以使用http接口方式
+      url: 'http://127.0.0.1:8000/huster/get_info/',
+      method: 'GET',
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        app.globalData.users = res.data.data;
+      },
+      fail: function (res) {
+        console.log(res);
+      }
+    });
     this.setData({
       users: app.globalData.users
-    })
+    });
   },
   onHide: function () {
     // Do something when page hide.

@@ -1,5 +1,13 @@
 <view class="component">
-    <image src="{{app.globalData.user_Info.avatarUrl}}" class='photo'></image>
-    <view class="name">{{app.globalData.user_Info.nickName}}</view>
+  <image src="{{Data.avatarUrl}}" class='photo'></image>
+  <view class="name">{{Data.nickName}}</view>
 </view>
-<view class="mine"></view>
+<view class="mine">
+  <view class='text'>我的发布</view>
+  <view class='release' wx:for="{{myRelease}}" wx:key="{{index}}" wx:for-item="item" bindtap="toDetail" data-index="{{index}}">
+    <view class='content'>
+    <view class='message'>#{{index+1}} {{item.college}} {{item.starting_point}}->{{item.end}} {{item.date}} {{item.time}}#</view>
+    <button class='delete' bindtap='delete'>delete</button>
+    </view>
+  </view>
+</view>
