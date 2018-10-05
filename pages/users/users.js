@@ -1,6 +1,5 @@
 var app = getApp()
 var user={
-  name:'',
   college:'',
   sex:"",
   textarea:'',
@@ -8,7 +7,8 @@ var user={
   end:"紫菘",
   date:'',
   time:'',
-  userinfo:{},
+  avatarUrl:"",
+  nickName:"",
   write:'false'
 }
 function clone(obj) {
@@ -84,7 +84,6 @@ Page({
     user.time = e.detail.value;
   },
   formSubmit:function(e){
-    user.name=e.detail.value.name;
     user.college = e.detail.value.college;
     user.sex= e.detail.value.sex;
     user.textarea=e.detail.value.textarea;
@@ -93,7 +92,7 @@ Page({
         wx.showToast({
           title: '信息未填完' ,
           icon: 'loading',
-          duration: 1000,
+          duration: 300,
           mask: true
         });
         break;
@@ -111,7 +110,8 @@ Page({
         }else{
           user.sex='/photos/性别女.png';
         }
-        user.userinfo = app.globalData.user_Info;
+        user.avatarUrl = app.globalData.user_Info.avatarUrl;
+        user.nickName = app.globalData.user_Info.nickName;
         var c =clone(user);
         app.globalData.users.push(c);
         console.log(app.globalData.user);

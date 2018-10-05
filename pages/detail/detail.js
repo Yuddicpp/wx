@@ -15,7 +15,6 @@ Page({
     this.setData({
       user:app.globalData.users[options.index]
     })
-    console.log(options);
   },
 
   /**

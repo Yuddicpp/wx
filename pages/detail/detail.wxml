@@ -1,10 +1,10 @@
 <view class='component'>
-  <image class='avatar' src="{{user.userinfo.avatarUrl}}"></image>
+  <image class='avatar' src="{{user.avatarUrl}}"></image>
   <view class="name_sex">
-    <view class='nickname'>{{user.userinfo.nickName}}</view>
+    <view class='nickname'>{{user.nickName}}</view>
     <image class='sex' src="{{user.sex}}"></image>
   </view>
-  <view class='information'>#{{user.name}}({{user.college}})#</view>
+  <view class='information'>#({{user.college}})#</view>
   <view class='starting_point'>
     <image src='/photos/起点.png' class='starting_point_photo'></image>
     <view class='starting_point_text'>{{user.starting_point}}</view>

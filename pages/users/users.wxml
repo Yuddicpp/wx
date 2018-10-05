@@ -2,9 +2,6 @@
   <view class='reback' bindtap='reback'>返回</view>
   填写同行信息</view>
 <form class='users' bindsubmit='formSubmit'>
-  <view class='titles'>姓名：
-    <input name="name" placeholder='请输入姓名' type='text' class='input_box'></input>
-  </view>
   <view class='titles'>学院：
     <input name="college" placeholder='请输入你的学院' type='text' class='input_box'></input>
   </view>
@@ -36,6 +33,6 @@
     </view>
   </picker>
   <view class='titles'>约伴要求</view>
-<textarea placeholder="不得多于15字" name="textarea" maxlength='15' class='area'/>
+<textarea placeholder="" name="textarea" class='area'/>
 <button form-type="submit" class='ending'> 发布 </button>
 </form>

@@ -10,7 +10,6 @@
   display: inline-block;
   position: absolute;
   left: 0px;
-  width: 40px;
   color: #fff;
   background-color: #FFB90F;
   text-align: center;
@@ -36,7 +35,7 @@
 }
 .area{
   border: solid 1px #FFF68F;
-  height: 50px;
+  height: 120px;
   width: 100%;  
   color: 	#2F4F4F;
 }
