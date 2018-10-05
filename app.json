@@ -27,7 +27,7 @@
       },
       {
         "pagePath": "pages/message/message",
-        "text": "消息",
+        "text": "我的",
         "iconPath": "photos/消息.png",
         "selectedIconPath": "photos/消息-d.png"
       }

@@ -21,17 +21,20 @@ Page({
 
   onLoad: function (options) {
     // Do some initialize when page load.
-    //   wx.request({
-    //     //上线接口地址要是https测试可以使用http接口方式
-    //       url: '',
-    //       method: 'GET',
-    //       header: {
-    //         'content-type': 'application/json'
-    //       },
-    //       success: function (res) {
-    //         console.log(res.data);
-    //       }
-    // });
+      wx.request({
+        //上线接口地址要是https测试可以使用http接口方式
+          url: 'https://127.0.0.1:8000/huster/get_info/',
+          method: 'GET',
+          header: {
+            'content-type': 'application/json'
+          },
+          success: function (res) {
+            console.log(JSON.stringify(res.data));
+          },
+          fail: function (res) {
+            console.log(res);
+          }
+    });
 
   },
   onReady: function () {

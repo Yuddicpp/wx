@@ -9,7 +9,6 @@ var user={
   time:'',
   avatarUrl:"",
   nickName:"",
-  write:'false'
 }
 function clone(obj) {
   var copy = {};
@@ -104,7 +103,6 @@ Page({
           duration: 1000,
           mask: true
         })
-        user.write='true';
         if(user.sex=='男'){
           user.sex='/photos/性别男.png';
         }else{
@@ -116,11 +114,11 @@ Page({
         app.globalData.users.push(c);
         console.log(app.globalData.users);
         wx.request({
-          url: 'http://127.0.0.1:8000/store_info/',
+          url: 'http://127.0.0.1:8000/huster/store_info/',
               method: 'POST',
               data:c,
               header: {
-                'content-type': 'application/json'
+                'content-type': 'application/x-www-form-urlencoded'
               },
               success: function (res) {
                 console.log(res.data);

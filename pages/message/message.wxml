@@ -1,2 +1,5 @@
-<image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-<text class="userinfo-nickname">{{userInfo.nickName}}</text>
+<view class="component">
+    <open-data type="userAvatarUrl" class="photo"></open-data>
+    <open-data type="userNickName" class="name"></open-data>
+</view>
+<view class="mine"></view>
