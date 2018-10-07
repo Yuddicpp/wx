@@ -39,6 +39,15 @@
   background-color: #ffb90f;
   color: #fff;
   padding: 3px;
+  position: relative;
+}
+.mark{
+  position: absolute;
+  background-size:100%;
+  right: 15px;
+  width: 15px;
+  height: 15px;
+  top: 8px;
 }
 .message{
     border: 1px solid #D3D3D3;

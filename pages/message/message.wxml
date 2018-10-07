@@ -2,8 +2,8 @@
   <image src="{{Data.avatarUrl}}" class='photo'></image>
   <view class="name">{{Data.nickName}}</view>
 </view>
-<view class='text'>我的发布</view>
-<view class="mine">
+<view class='text' bindtap='show'>我的发布 <image class='mark' src='{{hidden==true?"/photos/向右.png":"/photos/向下.png"}}'></image></view>
+<view class="mine" hidden='{{hidden}}'>
   <view class='release' wx:for="{{myRelease}}" wx:key="{{index}}" wx:for-item="item" bindtap='my_message' data-item="{{item}}">
     <view class='message' >
       <view >#</view>

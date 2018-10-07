@@ -6,15 +6,36 @@ Page({
     data: {
       user:{}
     },
-  
+    delete:function(){
+      wx.showToast({
+        title: '删除成功',
+        icon: 'succes',
+        duration: 1000,
+        mask: true
+      });
+      wx.request({
+        url: 'http://127.0.0.1:8000/huster/delete_info/',
+        method: 'POST',
+        data: this.data.user,
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        success: function (res) {
+          console.log(res.data);
+        }
+      });
+      wx.navigateBack({
+        delta: 1
+      })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
       this.setData({
-        user:options.item
-      })
-      console.log(options)
+        user:JSON.parse(options.item)
+      });
+      console.log(JSON.parse(options.item))
     },
   
     /**

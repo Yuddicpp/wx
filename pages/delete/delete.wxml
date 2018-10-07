@@ -1,3 +1,4 @@
+<view class='content'>
 <view class='information'>#({{user.college}})#</view>
   <view class='starting_point'>
     <image src='/photos/起点.png' class='starting_point_photo'></image>
@@ -15,3 +16,12 @@
     <image class='time_photo' src='/photos/时间.png'></image>
     <view class='time_text'>{{user.time}}</view>
   </view>
+  <view class='claim'>
+    <image class='claim_photo' src='/photos/附加要求.png'></image>
+    <view class='claim_text'>约伴要求</view>
+  </view>
+  <view class='textarea'>
+    {{user.textarea}}
+  </view>
+  </view>
+  <button class='delete' bindtap='delete'>删除</button>

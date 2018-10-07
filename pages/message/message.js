@@ -5,11 +5,19 @@ Page({
    */
   data: {
     Data: {},
-    myRelease:[]
+    myRelease:[],
+    hidden:true,
+    mark:'/photos/向右.png'
+  },
+  show:function(){
+    this.setData({
+      hidden:!this.data.hidden,
+      mark: this.data.mark == '/ photos / 向右.png' ?'/ photos / 向下.png':'/ photos / 向下.png'
+    })
   },
   my_message:function(e){
     wx.navigateTo({
-      url: '../delete/delete?item=' + e.currentTarget.dataset.item,
+      url: '../delete/delete?item=' + JSON.stringify(e.currentTarget.dataset.item),
     });
   },
   onLoad: function (options) {

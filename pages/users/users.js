@@ -71,12 +71,14 @@ Page({
     user.end = this.multiArray[0][e.detail.value[1]];
   },
   bindDateChange: function (e) {
+    console.log(e.detail.value)
     this.setData({
       date: e.detail.value
     });
     user.date = e.detail.value;
   },
   bindTimeChange: function (e) {
+    console.log(e.detail.value)
     this.setData({
       time: e.detail.value
     });

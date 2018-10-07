@@ -52,6 +52,7 @@ Page({
       },
       success: function(res) {
         app.globalData.users = res.data.data;
+        console.log(app.globalData.users);
         console.log('request success in onshow in index.js');
       },
       fail: function(res) {
