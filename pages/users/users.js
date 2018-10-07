@@ -112,7 +112,6 @@ Page({
         user.nickName = app.globalData.user_Info.nickName;
         var c = clone(user);
         app.globalData.users.push(c);
-        console.log(app.globalData.users);
         wx.request({
           url: 'http://127.0.0.1:8000/huster/store_info/',
           method: 'POST',

@@ -47,6 +47,7 @@ App({
       },
       success: function (res) {
         that.globalData.users = res.data.data;
+        console.log('request success in onLaunch in app.js')
       },
       fail: function (res) {
         console.log(res);

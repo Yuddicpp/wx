@@ -7,23 +7,15 @@ Page({
     Data: {},
     myRelease:[]
   },
+  my_message:function(e){
+    wx.navigateTo({
+      url: '../delete/delete?item=' + e.currentTarget.dataset.item,
+    });
+  },
   onLoad: function (options) {
     var that = this;
     this.setData({
       Data: app.globalData.user_Info
-    });
-    wx.request({
-      url: 'http://127.0.0.1:8000/huster/store_info/',
-      method: 'POST',
-      data: app.globalData.user_Info,
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      success: function (res) {
-        that.setData({
-          myRelease:res
-        });
-      }
     });
   },
 
@@ -36,9 +28,20 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.setData({
-      Data: app.globalData.user_Info
-    })
+    var that = this;
+    wx.request({
+      url: 'http://127.0.0.1:8000/huster/query_info/',
+      method: 'POST',
+      data: app.globalData.user_Info,
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        that.setData({
+          myRelease:res.data.data
+        });
+      }
+    });
   },
 
   /**

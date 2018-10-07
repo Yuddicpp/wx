@@ -29,10 +29,3 @@
     {{user.textarea}}
   </view>
 </view>
-<view class='allmessage'>全部留言</view>
-<view class='messages'></view>
-<view class='tap'>
-  <view class='leave_message'>留言</view>
-  <view class='collection'>收藏</view>
-  <view class='forward'>转发</view>
-</view>

@@ -1,0 +1,17 @@
+<view class='information'>#({{user.college}})#</view>
+  <view class='starting_point'>
+    <image src='/photos/起点.png' class='starting_point_photo'></image>
+    <view class='starting_point_text'>{{user.starting_point}}</view>
+  </view>
+  <view class='end'>
+  <image class='end_photo' src='/photos/终点.png'></image>
+  <view class='end_text'>{{user.end}}</view>
+  </view>
+  <view class='data'>
+    <image class='data_photo' src='/photos/日期.png'></image>
+    <view class='data_text'>{{user.date}}</view>
+  </view>
+  <view class='time'>
+    <image class='time_photo' src='/photos/时间.png'></image>
+    <view class='time_text'>{{user.time}}</view>
+  </view>

@@ -2,12 +2,16 @@
   <image src="{{Data.avatarUrl}}" class='photo'></image>
   <view class="name">{{Data.nickName}}</view>
 </view>
+<view class='text'>我的发布</view>
 <view class="mine">
-  <view class='text'>我的发布</view>
-  <view class='release' wx:for="{{myRelease}}" wx:key="{{index}}" wx:for-item="item" bindtap="toDetail" data-index="{{index}}">
-    <view class='content'>
-    <view class='message'>#{{index+1}} {{item.college}} {{item.starting_point}}->{{item.end}} {{item.date}} {{item.time}}#</view>
-    <button class='delete' bindtap='delete'>delete</button>
+  <view class='release' wx:for="{{myRelease}}" wx:key="{{index}}" wx:for-item="item" bindtap='my_message' data-item="{{item}}">
+    <view class='message' >
+      <view >#</view>
+      <view >{{index+1}} {{item.college}}</view>
+      <view class="padding">{{item.starting_point}}->{{item.end}}</view> 
+      <view class="padding">{{item.date}}</view>
+      <view class="padding">{{item.time}}</view> 
+      <view >#</view> 
     </view>
   </view>
 </view>

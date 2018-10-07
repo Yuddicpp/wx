@@ -5,7 +5,8 @@
     "pages/message/message",
     "pages/users/users",
     "pages/logs/logs",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/delete/delete"
   ],
   "window": {
     "backgroundTextStyle":"black",
